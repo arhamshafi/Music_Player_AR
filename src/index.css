@@ -1,1 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.tw_sh {
+  text-shadow: .1px .1px 3px white;
+}
+
+.to_sh {
+  text-shadow: .1px .1px 3px orangered;
+}
+
+.bx_sh {
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.493);
+}
+
+.ox_sh {
+  box-shadow: .5px .5px 5px 0px orangered;
+}
+
+.wx_sh {
+  box-shadow: .5px .5px 5px 0px white;
+}
+
+.custom-number-input::-webkit-outer-spin-button,
+.custom-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-number-input {
+  -moz-appearance: textfield;
+}

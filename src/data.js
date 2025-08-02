@@ -15,11 +15,11 @@ export const artists = [
 export const songs = [
     {
         id: "song1",
-        title: "Jeene Laga Hoon",
-        artistId: "artist1",
+        title: "Main Rahun",
+        artistId: "Samar Jafri",
         category: "Romantic",
         image: "https://i.ytimg.com/vi/Nu5Im3gsRNk/maxresdefault.jpg",
-        audio: "/music/jeene.mp3"
+        audio: "/music_files/44 - Parwarish - OST - ARY (ApniISP.Com).mp3"
     },
     {
         id: "song2",
@@ -31,5 +31,5 @@ export const songs = [
     }
 ];
 
-export const categories = ["Romantic", "Sad", "Workout"];
+export const categories = ["Romantic", "Sad", "Electronic"];
 
