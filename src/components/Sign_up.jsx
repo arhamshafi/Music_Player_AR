@@ -1,6 +1,4 @@
 import React, { useContext } from 'react'
-import { FaPlus } from "react-icons/fa6";
-import { MdOutlineStars } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { App_context } from '../context';
 import { useNavigate } from 'react-router-dom';
@@ -9,25 +7,25 @@ function Sign_up() {
     let { sing_handle, sign_up_data, Sign_up } = useContext(App_context)
     let navigate = useNavigate()
     return (
-        <div className='w-full h-max py-15 bg-[#1a1a1a] flex justify-center items-center'>
-            <div className='w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10'>
-                <h1 className='text-white tw_sh text-center text-4xl tracking-[2px] mt-8 '>Sign up Your Account</h1>
-                <p className='text-[#FFB347] tracking-wider to_sh text-sm mt-2 text-center'>Join creators shaping the future</p>
+        <div className='w-full h-max py-10 md:py-15 bg-[#1a1a1a] flex justify-center items-center'>
+            <div className='w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10 inp'>
+                <h1 className='text-white tw_sh text-center text-2xl sm:text-4xl tracking-[2px] fs1 mt-5 sm:mt-8 '>Sign up Your Account</h1>
+                <p className='text-[#FFB347] tracking-wider to_sh text-[13px] sm:text-sm mt-2 text-center'>Join creators shaping the future</p>
 
-                <div className='w-[90%] h-max py-10 bg-black/80 mx-auto  rounded-2xl mt-3'>
+                <div className='w-[90%] h-max py-7 sm:py-10 bg-black/80 mx-auto  rounded-2xl mt-3'>
                     <div className='w-full h-max flex justify-center flex-col items-center gap-5'>
-                        <input onChange={sing_handle} value={sign_up_data.name} name='name' type='Name' placeholder='Enter Your Name' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[550px]' />
-                        <input onChange={sing_handle} value={sign_up_data.email} name='email' type='email' placeholder='Enter Your Email' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[550px]' />
-                        <input onChange={sing_handle} value={sign_up_data.number} name='number' type="number" placeholder="Enter Your Number" className="bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[550px] custom-number-input" />
-                        <input onChange={sing_handle} value={sign_up_data.password} name='password' type='password' placeholder='Enter Your Password' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[550px]' />
+                        <input onChange={sing_handle} value={sign_up_data.name} name='name' type='Name' placeholder='Enter Your Name' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[90%] md:w-[550px]' />
+                        <input onChange={sing_handle} value={sign_up_data.email} name='email' type='email' placeholder='Enter Your Email' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[90%] md:w-[550px]' />
+                        <input onChange={sing_handle} value={sign_up_data.number} name='number' type="number" placeholder="Enter Your Number" className="bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[90%] md:w-[550px] custom-number-input" />
+                        <input onChange={sing_handle} value={sign_up_data.password} name='password' type='password' placeholder='Enter Your Password' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[90%] md:w-[550px]' />
                     </div>
 
-                    <button className='w-[550px] h-[50px] rounded-2xl wx_sh bg-white mx-auto block mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={Sign_up} >Sign up</button>
-                    <button className='w-[550px] h-[50px] ox_sh rounded-2xl bg-[#CC5500] mx-auto block text-white mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out' onClick={()=>navigate("/")} >You Already Have Account</button>
-                    <div className='w-[90%] mx-auto mt-5 flex justify-center gap-10 items-center'>
-                        <div className='w-[35%] border border-white'></div>
-                        <p className=' text-[#FFB347] to_sh text-md'>Or Continue With</p>
-                        <div className='w-[35%] border border-white'></div>
+                    <button className='w-[90%] md:w-[550px] h-[40px] sm:h-[50px] rounded-xl sm:rounded-2xl wx_sh bg-white mx-auto block mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={Sign_up} >Sign up</button>
+                    <button className='w-[90%] md:w-[550px] h-[40px] sm:h-[50px] ox_sh rounded-xl sm:rounded-2xl bg-[#CC5500] mx-auto block text-white mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out' onClick={() => navigate("/")} >You Already Have Account</button>
+                    <div className='w-[90%]  mx-auto mt-7 sm:mt-5 flex justify-between items-center'>
+                        <div className='w-[27%] line_width xl:w-[35%] border border-white'></div>
+                        <p className=' text-[#FFB347] to_sh text-[12px] sm:text-md'>Or Continue With</p>
+                        <div className='w-[27%] xl:w-[35%] line_width border border-white'></div>
                     </div>
                     <div className='w-full mt-3 flex justify-center gap-5 items-center'>
                         <button className="flex items-center transition-all duration-200 ease-in-out cursor-pointer hover:-translate-y-1">
@@ -42,7 +40,7 @@ function Sign_up() {
                         </button>
                         <FaFacebook className='text-blue-500 text-2xl bg-white rounded-xl transition-all duration-200 ease-in-out cursor-pointer hover:-translate-y-1' />
                     </div>
-                    <p className='text-white text-center mt-3 text-sm'>By clicking the button, you agree to our <span className='text-blue-300'>Terms of Use</span> and <span className='text-blue-300'>Privacy Policy</span></p>
+                    <p className='text-white text-center mt-3 w-[90%] mx-auto text-[12px] sm:text-sm'>By clicking the button, you agree to our <span className='text-blue-300'>Terms of Use</span> and <span className='text-blue-300'>Privacy Policy</span></p>
 
                 </div>
             </div>

@@ -10,37 +10,38 @@ function Sign_in() {
   let navigate = useNavigate()
   return (
     <div className='w-full h-max py-15 bg-[#1a1a1a] flex justify-center items-center'>
-      <div className='w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10'>
-        <h1 className='text-white tw_sh text-center text-4xl tracking-[2px] mt-8 '>Welcome Back</h1>
-        <p className='text-[#FFB347] tracking-wider to_sh text-sm mt-2 text-center'>Join creators shaping the future</p>
-        <p className='text-white tracking-[1px] font-bold text-center mt-2 text-lg'>Recent Logins</p>
-        <div className='w-full h-max py-1 flex justify-center items-center gap-5 mt-5 '>
-          <div className='w-[100px] h-[100px] wx_sh bg-white rounded-xl flex justify-center items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in'> <MdOutlineStars className='text-yellow-500 text-7xl' /> </div>
-          <div className='w-[100px] h-[100px] ox_sh bg-[#CC5500] rounded-xl flex flex-col gap-3 items-center hover:scale-95 cursor-pointer transition-all duration-100 ease-in ' onClick={() => navigate("/sign_up")} >
-            <div className='w-[35px] rounded-full h-[35px] bg-white/40 bx_sh flex  justify-center items-center mt-5'>
-              <FaPlus className='text-white text-2xl' /> </div>
-            <p className='text-white text-[12px] font-bold'>Add Account</p>
+      <div className='w-[93%] sm:w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10'>
+        <h1 className='text-white tw_sh text-center text-xl sm:text-4xl tracking-[2px] mt-5 sm:mt-8 '>Welcome Back</h1>
+        <p className='text-[#FFB347] tracking-wider to_sh text-[12px] sm:text-sm mt-2 text-center'>Join creators shaping the future</p>
+        <p className='text-white tracking-[1px] font-bold text-center mt-2 text-md sm:text-lg'>Recent Logins</p>
+        <div className='w-full h-max py-1 flex justify-center items-center gap-5  flex-wrap mt-3 sm:mt-5 '>
+          <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center  items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in'> <MdOutlineStars className='text-yellow-500 text-5xl sm:text-7xl' /> </div>
+          <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] ox_sh hover:opacity-70 bg-[#CC5500] rounded-xl flex flex-col gap-3 items-center hover:scale-95 cursor-pointer transition-all duration-100 ease-in ' onClick={() => navigate("/sign_up")} >
+            <div className='w-[35px] rounded-full h-[35px] bg-white/40 bx_sh flex  justify-center items-center mt-4 sm:mt-5'>
+              <FaPlus className='text-white text-lg sm:text-2xl' /> </div>
+            <p className='text-white hidden sm:block text-[12px] font-bold'>Add Account</p>
           </div>
         </div>
-        <div className='w-[90%] mx-auto mt-5 flex justify-between items-center'>
-          <div className='w-[45%] border border-white'></div>
+        <div className='w-[90%] mx-auto mt-3 sm:mt-5 flex justify-between items-center'>
+          <div className='w-[40%] sm:w-[45%] border border-white'></div>
           <p className='text-white/80 text-xl'>Or</p>
-          <div className='w-[45%] border border-white'></div>
+          <div className='w-[40%] sm:w-[45%] border border-white'></div>
         </div>
-        <div className='w-[90%] h-max py-10 bg-black/80 mx-auto rounded-2xl mt-3'>
-          <div className='w-full h-max flex justify-center items-center gap-10'>
-            <input type='email' placeholder='Enter Your Email' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[450px]' onChange={onhandle} name="email" value={loginData.email} />
-            <input type='password' placeholder='Enter Your Password' className='bg-white/40 outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[50px] w-[450px]' onChange={onhandle} name="password" value={loginData.password} />
+        {/* ////////// */}
+        <div className='w-[90%] h-max py-10 inp bg-black/80 mx-auto rounded-2xl mt-3'>
+          <div className='w-full h-max flex gap-3 sm:gap-0 flex-col sm:flex-row justify-evenly items-center '>
+            <input type='email' placeholder='Enter Your Email' className='bg-white/40 inp outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[85%] sm:w-[45%]' onChange={onhandle} name="email" value={loginData.email} />
+            <input type='password' placeholder='Enter Your Password' className='bg-white/40 inp outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[85%] sm:w-[45%]' onChange={onhandle} name="password" value={loginData.password} />
           </div>
           <p className='text-white mt-4 text-sm w-max mx-auto hover:underline cursor-pointer'>Forgot Password</p>
-          <button className='w-[450px] h-[50px] rounded-2xl wx_sh bg-white mx-auto block mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={login} >Login in</button>
-          <button className='w-[450px] h-[50px] ox_sh rounded-2xl bg-[#CC5500] mx-auto block text-white mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out' onClick={() => navigate("/sign_up")}>Create New Account</button>
-          <div className='w-[90%] mx-auto mt-5 flex justify-center gap-10 items-center'>
-            <div className='w-[35%] border border-white'></div>
-            <p className=' text-[#FFB347] to_sh text-md'>Or Login With</p>
-            <div className='w-[35%] border border-white'></div>
+          <button className='w-[85%] inp sm:w-[450px] h-[40px] sm:h-[50px] rounded-xl sm:rounded-2xl wx_sh bg-white mx-auto block mt-3 sm:mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={login} >Login in</button>
+          <button className='w-[85%] inp sm:w-[450px] h-[40px] sm:h-[50px] ox_sh rounded-xl sm:rounded-2xl bg-[#CC5500] mx-auto block text-white mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out' onClick={() => navigate("/sign_up")}>Create New Account</button>
+          <div className='w-full sm:w-[90%] mx-auto mt-5 flex justify-center gap-10 items-center'>
+            <div className='w-[20%] sm:w-[28%] lg:w-[35%] dn border border-white'></div>
+            <p className=' text-[#FFB347] to_sh w-max text-sm sm:text-md'>Or Login With</p>
+            <div className='w-[20%] sm:w-[28%] lg:w-[35%] dn border border-white'></div>
           </div>
-          <div className='w-full mt-3 flex justify-center gap-5 items-center'>
+          <div className='w-full scale-75 sm:scale-100 mt-2 sm:mt-3 flex justify-center gap-5 items-center'>
             <button className="flex items-center transition-all duration-200 ease-in-out cursor-pointer hover:-translate-y-1">
               <span dangerouslySetInnerHTML={{ __html: `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48"><path fill="#fbc02d" d="M43.6 20.5H42V20H24v8h11.3C33.4 32.4 29.2 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.4l6.1-6.1C33.3 6.1 28.9 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 20-8 20-20 0-1.3-.1-2.7-.4-3.9z"/><path fill="#e53935" d="M6.3 14.6l6.6 4.8C14.3 16 18.8 13 24 13c2.6 0 5 .9 6.9 2.4l6.1-6.1C33.3 6.1 28.9 4 24 4 15.3 4 7.9 9.8 6.3 14.6z"/><path fill="#4caf50" d="M24 44c5.2 0 10-1.8 13.7-4.9l-6.4-5.2C29.2 35 26.6 36 24 36c-5.1 0-9.4-3.4-10.9-8.1l-6.6 5.1C9.6 39.5 16.3 44 24 44z"/><path fill="#1565c0" d="M43.6 20.5H42V20H24v8h11.3c-1.1 3-4.1 5.5-7.3 6.1l.1.1 6.4 5.2c-.4.3 6.6-4.8 6.6-14.4 0-1.3-.1-2.7-.4-3.9z"/></svg>` }} />
             </button>
@@ -53,7 +54,7 @@ function Sign_in() {
             </button>
             <FaFacebook className='text-blue-500 text-2xl bg-white rounded-xl transition-all duration-200 ease-in-out cursor-pointer hover:-translate-y-1' />
           </div>
-          <p className='text-white text-center mt-3 text-sm'>By clicking the button, you agree to our <span className='text-blue-300'>Terms of Use</span> and <span className='text-blue-300'>Privacy Policy</span></p>
+          <p className='text-white text-center mt-3 w-[90%] mx-auto text-sm'>By clicking the button, you agree to our <span className='text-blue-300'>Terms of Use</span> and <span className='text-blue-300'>Privacy Policy</span></p>
 
         </div>
       </div>
