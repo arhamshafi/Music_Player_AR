@@ -7,7 +7,7 @@ function Sign_up() {
     let { sing_handle, sign_up_data, Sign_up } = useContext(App_context)
     let navigate = useNavigate()
     return (
-        <div className='w-full h-max py-10 md:py-15 bg-[#1a1a1a] flex justify-center items-center'>
+        <div className='w-full min-h-screen py-10 md:py-15 bg-[#1a1a1a] flex justify-center items-center'>
             <div className='w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10 inp'>
                 <h1 className='text-white tw_sh text-center text-2xl sm:text-4xl tracking-[2px] fs1 mt-5 sm:mt-8 '>Sign up Your Account</h1>
                 <p className='text-[#FFB347] tracking-wider to_sh text-[13px] sm:text-sm mt-2 text-center'>Join creators shaping the future</p>

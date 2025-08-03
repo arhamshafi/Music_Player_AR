@@ -9,7 +9,7 @@ function Sign_in() {
   let { loginData, onhandle, login, App_users, setcrnt_user } = useContext(App_context)
   let navigate = useNavigate()
   return (
-    <div className='w-full h-max py-15 bg-[#1a1a1a] flex justify-center items-center'>
+    <div className='w-full min-h-screen py-15 bg-[#1a1a1a] flex justify-center items-center'>
       <div className='w-[93%] sm:w-[85%] h-[max]  rounded-2xl bg-[#333333] py-.05 pb-10'>
         <h1 className='text-white tw_sh text-center text-xl sm:text-4xl tracking-[2px] mt-5 sm:mt-8 '>Welcome Back</h1>
         <p className='text-[#FFB347] tracking-wider to_sh text-[12px] sm:text-sm mt-2 text-center'>Join creators shaping the future</p>
