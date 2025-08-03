@@ -3,7 +3,7 @@ import { App_context } from '../context'
 
 function Web_page() {
 
-  let { crnt_user }  = useContext(App_context)
+  let { crnt_user } = useContext(App_context)
 
   return (
 

@@ -23,7 +23,7 @@ function Sign_in() {
             })
           }
 
-          <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] ox_sh hover:opacity-70 bg-[#CC5500] rounded-xl flex flex-col gap-3 items-center hover:scale-95 cursor-pointer transition-all duration-100 ease-in ' onClick={() => navigate("/sign_up")} >
+          <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] ox_sh  bg-[#CC5500] rounded-xl flex flex-col gap-3 items-center hover:scale-105 cursor-pointer transition-all duration-200 ease-in ' onClick={() => navigate("/sign_up")} >
             <div className='w-[35px] rounded-full h-[35px] bg-white/40 bx_sh flex  justify-center items-center mt-4 sm:mt-5'>
               <FaPlus className='text-white text-lg sm:text-2xl' /> </div>
             <p className='text-white hidden sm:block text-[12px] font-bold'>Add Account</p>
