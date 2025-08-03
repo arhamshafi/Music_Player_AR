@@ -6,7 +6,7 @@ import { App_context } from '../context';
 import { useNavigate } from 'react-router-dom';
 
 function Sign_in() {
-  let { loginData, onhandle, login } = useContext(App_context)
+  let { loginData, onhandle, login, App_users, setcrnt_user } = useContext(App_context)
   let navigate = useNavigate()
   return (
     <div className='w-full h-max py-15 bg-[#1a1a1a] flex justify-center items-center'>
@@ -15,7 +15,14 @@ function Sign_in() {
         <p className='text-[#FFB347] tracking-wider to_sh text-[12px] sm:text-sm mt-2 text-center'>Join creators shaping the future</p>
         <p className='text-white tracking-[1px] font-bold text-center mt-2 text-md sm:text-lg'>Recent Logins</p>
         <div className='w-full h-max py-1 flex justify-center items-center gap-5  flex-wrap mt-3 sm:mt-5 '>
-          <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center  items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in'> <MdOutlineStars className='text-yellow-500 text-5xl sm:text-7xl' /> </div>
+          {
+            App_users?.map((ele, idx) => {
+              return (
+                <div key={idx} className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center flex-col text-[10px] sm:text-sm  items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in gap-1'> <MdOutlineStars className='text-yellow-500 text-3xl ' onClick={() => { setcrnt_user(ele), localStorage.setItem("crnt_login", JSON.stringify(ele)), navigate("/web") }} /> {ele.name} </div>
+              )
+            })
+          }
+
           <div className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] ox_sh hover:opacity-70 bg-[#CC5500] rounded-xl flex flex-col gap-3 items-center hover:scale-95 cursor-pointer transition-all duration-100 ease-in ' onClick={() => navigate("/sign_up")} >
             <div className='w-[35px] rounded-full h-[35px] bg-white/40 bx_sh flex  justify-center items-center mt-4 sm:mt-5'>
               <FaPlus className='text-white text-lg sm:text-2xl' /> </div>

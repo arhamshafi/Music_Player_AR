@@ -32,19 +32,21 @@ body {
 }
 
 @media screen and (max-width:480px) {
-    .line_width{
-      width: 23%;
-    }
+  .line_width {
+    width: 23%;
+  }
 }
 
 @media screen and (max-width:400px) {
-    .dn{
-      display: none;
-    }
-    .inp{
-      width: 92%;
-    }
-    .fs1{
-      font-size: 20px;
-    }
+  .dn {
+    display: none;
+  }
+
+  .inp {
+    width: 92%;
+  }
+
+  .fs1 {
+    font-size: 20px;
+  }
 }
