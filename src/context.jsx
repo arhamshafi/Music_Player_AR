@@ -10,7 +10,8 @@ function AppProvider({ children }) {
     let [loginData, setLoginData] = useState({ email: "", password: "" });
     let [sign_up_data, set_signup_data] = useState({ name: "", number: "", email: "", password: "" })
     let [refresh, setrefresh] = useState(false)
-    let [side_bar1 , setside_bar_1] = useState(false)
+    let [side_bar1, setside_bar_1] = useState(false)
+    let [side_bar2, setside_bar_2] = useState(false)
 
     const [App_users, setAppUsers] = useState(() => {
         const stored = localStorage.getItem("new_user");
@@ -113,9 +114,10 @@ function AppProvider({ children }) {
     }
 
     return (
-        <App_context.Provider value={{ loginData, setLoginData, onhandle, login, sing_handle, sign_up_data, Sign_up, App_users, crnt_user, setcrnt_user,
-            side_bar1 , setside_bar_1
-         }}>
+        <App_context.Provider value={{
+            loginData, setLoginData, onhandle, login, sing_handle, sign_up_data, Sign_up, App_users, crnt_user, setcrnt_user,
+            side_bar1, setside_bar_1, side_bar2, setside_bar_2
+        }}>
             {children}
         </App_context.Provider>
     );

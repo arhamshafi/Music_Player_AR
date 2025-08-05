@@ -6,12 +6,12 @@ import Side_bar2 from './Side_bar2'
 
 function Web_page() {
 
-  let { crnt_user, setside_bar_1  , side_bar1 } = useContext(App_context)
+  let { crnt_user, setside_bar_1  , side_bar1  , side_bar2 , setside_bar_2 } = useContext(App_context)
 
   return (
 
-    <div className='w-full min-h-screen bg-black flex '>
-      <div className={`w-full h-screen bg-black/60 ${side_bar1 ? "visible opacity-100" : "invisible opacity-0"} transition-all ease-in-out duration-200 cursor-pointer fixed top-0 left-0 z-8`} onClick={() => setside_bar_1(false)}></div>
+    <div className='w-full min-h-screen bg-black flex  '>
+      <div className={`w-full h-screen  pb-5 bg-black/60 ${side_bar1 || side_bar2 ? "visible opacity-100" : "invisible opacity-0"} transition-all ease-in-out duration-200 cursor-pointer fixed top-0 left-0 z-8`} onClick={() => {setside_bar_1(false) , setside_bar_2(false)}}></div>
       <Side_bar1 />
       <Mid_bar />
       <Side_bar2 />

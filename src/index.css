@@ -32,16 +32,26 @@ body {
 }
 
 
-
-/* @media screen and (max-width:1150px) {
-  .box_1{
-    w
-  }
-} */
-
 @media screen and (max-width:480px) {
   .line_width {
     width: 23%;
+  }
+.bh{
+  height: 150px;
+}
+  .cn {
+    justify-content: center;
+  }
+  .fs_1{
+    font-size: 10px;
+  }
+   .fs_2{
+    font-size: 13px;
+  }
+  .dot_3icon{
+    right: 0px;
+    font-size: 15px;
+    top:10px;
   }
 }
 
@@ -53,8 +63,19 @@ body {
   .inp {
     width: 92%;
   }
-
+ .fs_1{
+    font-size: 9px;
+    margin-top: 10px;
+    text-align: center;
+  }
   .fs1 {
     font-size: 20px;
+  }
+   .fs_2{
+    font-size: 12px;
+    text-align: center;
+  }
+  .bh{
+    height: 135px;
   }
 }
