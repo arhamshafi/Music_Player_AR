@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineStars } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { App_context } from '../context';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Sign_in() {
   let { loginData, onhandle, login, App_users, setcrnt_user } = useContext(App_context)
@@ -23,7 +24,10 @@ function Sign_in() {
                   onClick={() => {
                     setcrnt_user(ele);
                     localStorage.setItem("crnt_login", JSON.stringify(ele));
-                    navigate("/web");
+                    toast.success(`Login by ${ele.name}`)
+                    setTimeout(() => {
+                      navigate("/web");
+                    }, 1800);
                   }}
                   className='w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center flex-col text-[10px] sm:text-sm items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in gap-1'
                 >

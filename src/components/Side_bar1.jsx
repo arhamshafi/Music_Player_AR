@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Side_bar1() {
 
-    let { side_bar1, setcrnt_user } = useContext(App_context)
+    let { side_bar1, setside_bar_1} = useContext(App_context)
     let [active, setactive] = useState("Feed")
     let navigate = useNavigate()
 
@@ -39,7 +39,7 @@ function Side_bar1() {
                     })
                 }
             </div>
-            <button className='hover:text-orange-500 hover:border-orange-600 border-1 ml-3 mt-15 py-1 px-5 text-white border-transparent text-sm font-bold tracking-[1px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 hover:bg-transparent bg-orange-600 ox_sh rounded-lg' onClick={() => { navigate("/"), localStorage.removeItem("crnt_login") }} >Log Out</button>
+            <button className='hover:text-orange-500 hover:border-orange-600 border-1 ml-3 mt-15 py-1 px-5 text-white border-transparent text-sm font-bold tracking-[1px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 hover:bg-transparent bg-orange-600 ox_sh rounded-lg' onClick={() => { navigate("/"), localStorage.removeItem("crnt_login") , setside_bar_1(false) }} >Log Out</button>
         </div>
 
     )
