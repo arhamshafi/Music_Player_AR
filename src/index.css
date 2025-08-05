@@ -30,6 +30,18 @@ body {
   -webkit-appearance: none;
   margin: 0;
 }
+.anime_1{
+  animation: 1s anime_1 linear infinite  alternate;
+}
+@keyframes anime_1{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: .4;
+  }
+
+}
 
 
 @media screen and (max-width:480px) {

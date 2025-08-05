@@ -18,7 +18,18 @@ function Sign_in() {
           {
             App_users?.map((ele, idx) => {
               return (
-                <div key={idx} className=' w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center flex-col text-[10px] sm:text-sm  items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in gap-1'> <MdOutlineStars className='text-yellow-500 text-3xl ' onClick={() => { setcrnt_user(ele), localStorage.setItem("crnt_login", JSON.stringify(ele)), navigate("/web") }} /> {ele.name} </div>
+                <div
+                  key={idx}
+                  onClick={() => {
+                    setcrnt_user(ele);
+                    localStorage.setItem("crnt_login", JSON.stringify(ele));
+                    navigate("/web");
+                  }}
+                  className='w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] hover:opacity-70 wx_sh bg-white rounded-xl flex justify-center flex-col text-[10px] sm:text-sm items-center hover:scale-95 cursor-pointer transition-all duration-200 ease-in gap-1'
+                >
+                  <MdOutlineStars className='text-yellow-500 text-3xl' />
+                  {ele.name}
+                </div>
               )
             })
           }
