@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { IoSearchSharp } from "react-icons/io5";
 import { MdAudiotrack } from "react-icons/md";
 import bg_img from "/imges_folder/Top-Spotify-Playlists-for-Every-Mood.webp"
@@ -10,21 +10,24 @@ import { toast } from 'react-toastify';
 import { FaBars } from "react-icons/fa";
 import { App_context } from '../context';
 import { GoSidebarExpand } from "react-icons/go";
+import { GiEgyptianProfile } from "react-icons/gi";
 
 
 
-function Mid_bar() {
+function Mid_bar({ setprofile, profile }) {
 
-  let { setside_bar_1 , setside_bar_2 } = useContext(App_context)
+  let { setside_bar_1, setside_bar_2 } = useContext(App_context)
+
   return (
-    <div className='w-full lg:w-[65%] min-h-screen px-2 sm:px-5 lg:px-8 relative '>
+    <div className='w-full lg:w-[65%] min-h-screen px-2 sm:px-5 lg:px-5 relative '>
       <div className='flex items-center gap-3'>
-        <FaBars className='text-white  text-2xl mt-4.5 block lg:hidden cursor-pointer hover:opacity-75 transition-all duration-200 ease-in-out' onClick={() => {setside_bar_1(true) , setside_bar_2(false) }} />
+        <FaBars className='text-white  text-xl mt-4.5 block lg:hidden cursor-pointer hover:opacity-75 transition-all duration-200 ease-in-out' onClick={() => { setside_bar_1(true), setside_bar_2(false) }} />
         <div className='h-max relative mt-5 w-[75%] sm:w-[65%] '>
           <input type='text' placeholder='Search By Songs ' className='bg-white/20 inp outline-none px-9 tracking-[1px] text-sm border-2 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-lg sm:rounded-xl h-[30px] sm:h-[40px] w-full ' />
           <IoSearchSharp className='absolute top-1.5 sm:top-2.5 left-3 text-lg sm:text-xl text-white/60' />
         </div>
-        <GoSidebarExpand className='text-white absolute mt-5 text-2xl block lg:hidden cursor-pointer active:scale-95 hover:scale-102 transition-all duration-200 ease-out hover:text-orange-500 right-3 z-5' onClick={()=>{setside_bar_2(true) , setside_bar_1(false)}} />
+        <GiEgyptianProfile className='text-white absolute mt-5 text-lg sm:text-2xl cursor-pointer active:scale-95 hover:scale-102 transition-all duration-200 ease-out hover:text-orange-400 right-8 sm:right-13 lg:right-2 z-5' onClick={() => toast.error("Dashboard is Not Ready Yet")} />
+        <GoSidebarExpand className='text-white absolute mt-5 text-lg sm:text-2xl block lg:hidden cursor-pointer active:scale-95 hover:scale-102 transition-all duration-200 ease-out hover:text-orange-400 right-1.5 sm:right-3 z-5' onClick={() => { setside_bar_2(true), setside_bar_1(false) }} />
       </div>
       <div className='w-full h-max mt-7 flex cn justify-between flex-wrap-reverse gap-5  items-center'>
         <div className='w-[400px] md:w-[32%] lg:w-[450px] xl:w-[30%] h-[200px] sm:h-[250px] rounded-2xl bg-cover  relative bg-center ' style={{ backgroundImage: `url(${bg_img})` }}>

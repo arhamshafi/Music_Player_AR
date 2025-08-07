@@ -56,7 +56,7 @@ function Sign_in() {
             <input type='password' placeholder='Enter Your Password' className='bg-white/40 inp outline-none px-5 border-3 border-transparent focus:border-orange-600 transition-all duration-150 ease-in text-white rounded-xl h-[40px] sm:h-[50px] w-[85%] sm:w-[45%]' onChange={onhandle} name="password" value={loginData.password} />
           </div>
           <p className='text-white mt-4 text-sm w-max mx-auto hover:underline cursor-pointer'>Forgot Password</p>
-          <button className='w-[85%] inp sm:w-[450px] h-[40px] sm:h-[50px] rounded-xl sm:rounded-2xl wx_sh bg-white mx-auto block mt-3 sm:mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={login} >Login in</button>
+          <button className='w-[85%] inp sm:w-[450px] h-[40px] sm:h-[50px] rounded-xl sm:rounded-2xl wx_sh bg-white mx-auto block mt-3 sm:mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out ' onClick={login} >Login</button>
           <button className='w-[85%] inp sm:w-[450px] h-[40px] sm:h-[50px] ox_sh rounded-xl sm:rounded-2xl bg-[#CC5500] mx-auto block text-white mt-5 hover:scale-103 cursor-pointer transition-all duration-200 ease-in-out' onClick={() => navigate("/sign_up")}>Create New Account</button>
           <div className='w-full sm:w-[90%] mx-auto mt-5 flex justify-center gap-10 items-center'>
             <div className='w-[20%] sm:w-[28%] lg:w-[35%] dn border border-white'></div>
