@@ -3,13 +3,30 @@ export const artists = [
     {
         id: "artist1",
         name: "Atif Aslam",
-        image: "https://i.scdn.co/image/ab6761610000e5eb6d3c62fdab4b7b716e3d10f3"
+        image: ""
     },
     {
         id: "artist2",
         name: "Arijit Singh",
-        image: "https://i.scdn.co/image/ab6761610000e5ebeb0c9b622a4f78b4c12e6c27"
-    }
+        image: ""
+    },
+    {
+        id: "artist3",
+        name: "Jubin Nautiyal",
+        image: ""
+    },
+    {
+        id: "artist4",
+        name: "Diljit Dosanjh",
+        image: ""
+    },
+    {
+        id: "artist5",
+        name: "",
+        image: ""
+    },
+
+
 ];
 
 export const songs = [
