@@ -1,29 +1,40 @@
 
+
 export const artists = [
     {
         id: "artist1",
         name: "Atif Aslam",
-        image: ""
+        image: "/imges_folder/atif.jpeg"
     },
     {
         id: "artist2",
         name: "Arijit Singh",
-        image: ""
+        image: "/imges_folder/arijit.jpeg"
     },
     {
         id: "artist3",
         name: "Jubin Nautiyal",
-        image: ""
+        image: "/imges_folder/jubin.jpeg"
     },
     {
         id: "artist4",
         name: "Diljit Dosanjh",
-        image: ""
+        image: "/imges_folder/diljit.jpeg"
     },
     {
         id: "artist5",
-        name: "",
-        image: ""
+        name: "Talwiinder",
+        image: "/imges_folder/talwinder.jpeg"
+    },
+    {
+        id: "artist6",
+        name: "Faheem Abdullah",
+        image: "/imges_folder/faheem.jpeg"
+    },
+     {
+        id: "artist7",
+        name: "Samar Jafri",
+        image: "/imges_folder/samar.jpeg"
     },
 
 
@@ -33,20 +44,20 @@ export const songs = [
     {
         id: "song1",
         title: "Main Rahun",
-        artistId: "Samar Jafri",
+        artistId: "artist7",
         category: "Romantic",
-        image: "https://i.ytimg.com/vi/Nu5Im3gsRNk/maxresdefault.jpg",
+        image: "/imges_folder/mainrahu.jpeg",
         audio: "/music_files/44 - Parwarish - OST - ARY (ApniISP.Com).mp3"
     },
     {
         id: "song2",
-        title: "Tum Hi Ho",
+        title: "Halka Halka",
         artistId: "artist2",
-        category: "Sad",
-        image: "https://i.ytimg.com/vi/Umqb9KENgmk/maxresdefault.jpg",
+        category: "Chill Vibes",
+        image: "/imges_folder/halka_halka_sa.jpeg",
         audio: "/music/tumhiho.mp3"
     }
 ];
 
-export const categories = ["Romantic", "Sad", "Electronic"];
+export const categories = ["Romantic", "Sad", "Chill Vibes"];
 
