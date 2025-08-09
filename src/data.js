@@ -31,7 +31,7 @@ export const artists = [
         name: "Faheem Abdullah",
         image: "/imges_folder/faheem.jpeg"
     },
-     {
+    {
         id: "artist7",
         name: "Samar Jafri",
         image: "/imges_folder/samar.jpeg"
@@ -45,7 +45,8 @@ export const songs = [
         id: "song1",
         title: "Main Rahun",
         artistId: "artist7",
-        category: "Romantic",
+        category: "Chill Vibes",
+        artistName: "Samar Jafri",
         image: "/imges_folder/mainrahu.jpeg",
         audio: "/music_files/44 - Parwarish - OST - ARY (ApniISP.Com).mp3"
     },
@@ -53,9 +54,19 @@ export const songs = [
         id: "song2",
         title: "Halka Halka",
         artistId: "artist2",
+        artistName: "Arijit Singh",
         category: "Chill Vibes",
         image: "/imges_folder/halka_halka_sa.jpeg",
-        audio: "/music/tumhiho.mp3"
+        audio: "/music_files/Halka Halka Sa - DjPunjab.Com.Se.mp3"
+    },
+    {
+        id: "song3",
+        title: "Barbaad",
+        artistId: "artist3",
+        category: "Romantic",
+        artistName: "Jubin Nautiyal",
+        image: "/imges_folder/barbad.jpeg",
+        audio: "/music_files/Barbaad Saiyaara 320 Kbps.mp3"
     }
 ];
 

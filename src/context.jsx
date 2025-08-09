@@ -1,17 +1,21 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { songs } from './data';
 
 export const App_context = createContext();
 
 function AppProvider({ children }) {
 
+    let new_release = songs.slice(1)
     let navigate = useNavigate()
     let [loginData, setLoginData] = useState({ email: "", password: "" });
     let [sign_up_data, set_signup_data] = useState({ name: "", number: "", email: "", password: "" })
     let [refresh, setrefresh] = useState(false)
     let [side_bar1, setside_bar_1] = useState(false)
     let [side_bar2, setside_bar_2] = useState(false)
+
+
 
     const [App_users, setAppUsers] = useState(() => {
         const stored = localStorage.getItem("new_user");
@@ -113,10 +117,42 @@ function AppProvider({ children }) {
         }, 1800)
     }
 
+
+    let [currentTrack, setCurrentTrack] = useState(null)
+    let [isplaying, setisplaying] = useState(false)
+
+    let audio = useRef(new Audio())
+
+    useEffect(() => {
+        if (currentTrack) {
+            audio.current.src = currentTrack.audio
+            if (isplaying) {
+                audio.current.play()
+            }
+            else {
+                audio.current.pause()
+            }
+
+        }
+    }, [currentTrack, isplaying])
+
+    let handle_track = (track) => {
+
+        if (currentTrack?.id === track.id) {
+            setisplaying(!isplaying)
+        }
+        else {
+            setisplaying(true);
+            setCurrentTrack(track);
+        }
+
+    }
+
+
     return (
         <App_context.Provider value={{
             loginData, setLoginData, onhandle, login, sing_handle, sign_up_data, Sign_up, App_users, crnt_user, setcrnt_user,
-            side_bar1, setside_bar_1, side_bar2, setside_bar_2
+            side_bar1, setside_bar_1, side_bar2, setside_bar_2, new_release, isplaying, setisplaying, handle_track, currentTrack
         }}>
             {children}
         </App_context.Provider>
