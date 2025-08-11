@@ -1,13 +1,14 @@
 import React, { createContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { songs } from './data';
+import { songs, artists } from './data';
 
 export const App_context = createContext();
 
 function AppProvider({ children }) {
 
     let new_release = songs.slice(1)
+    let allartist = artists
     let navigate = useNavigate()
     let [loginData, setLoginData] = useState({ email: "", password: "" });
     let [sign_up_data, set_signup_data] = useState({ name: "", number: "", email: "", password: "" })
@@ -117,7 +118,7 @@ function AppProvider({ children }) {
         }, 1800)
     }
 
-
+    ///////////////////////////////////
     let [currentTrack, setCurrentTrack] = useState(null)
     let [isplaying, setisplaying] = useState(false)
 
@@ -134,9 +135,19 @@ function AppProvider({ children }) {
             }
 
         }
+        else {
+            audio.current.pause();
+            audio.current.src = "";
+        }
     }, [currentTrack, isplaying])
 
     let handle_track = (track) => {
+
+        if (!track) {
+            setisplaying(false);
+            setCurrentTrack(null);
+            return;
+        }
 
         if (currentTrack?.id === track.id) {
             setisplaying(!isplaying)
@@ -149,10 +160,13 @@ function AppProvider({ children }) {
     }
 
 
+
+
     return (
         <App_context.Provider value={{
             loginData, setLoginData, onhandle, login, sing_handle, sign_up_data, Sign_up, App_users, crnt_user, setcrnt_user,
-            side_bar1, setside_bar_1, side_bar2, setside_bar_2, new_release, isplaying, setisplaying, handle_track, currentTrack
+            side_bar1, setside_bar_1, side_bar2, setside_bar_2, new_release, isplaying, setisplaying, handle_track, currentTrack,
+            setCurrentTrack, allartist
         }}>
             {children}
         </App_context.Provider>

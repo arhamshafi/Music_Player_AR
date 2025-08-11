@@ -9,12 +9,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className='w-full h-max bg-white select-none'>
-       <ToastContainer position="top-center" autoClose={1300} />
-        <Routes>
-          <Route path='/' element={<Sign_in />} />
-          <Route path='/sign_up' element={<Sign_up />} />
-          <Route path='/web' element={<Web_page/>} />
-        </Routes>
+      <ToastContainer position="top-center" autoClose={1300} />
+      <Routes>
+        <Route path='/' element={<Sign_in />} />
+        <Route path='/sign_up' element={<Sign_up />} />
+        <Route path='/web' element={<Web_page />} />
+      </Routes>
     </div>
   )
 }
