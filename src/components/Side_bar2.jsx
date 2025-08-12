@@ -17,7 +17,6 @@ function Side_bar2() {
         <div className="w-full h-[170px] mt-2 overflow-y-auto overflow-x-hidden only-y-scroll">
           {
             new_release.map((ele, idx) => {
-              // console.log(ele);
 
               return (
                 <div key={idx} className='w-[98%] mx-auto h-[70px] cursor-pointer transition-all duration-200 ease-in-out hover:scale-102 flex justify-between px-1.5 group items-center  mt-3 bg-black rounded-xl ' onClick={() => handle_track(ele)} >
@@ -45,7 +44,7 @@ function Side_bar2() {
             allartist.map((ele, idx) => {
               return (
                 <div key={idx} className='w-full h-[70px] flex gap-3 px-2 hover:bg-black/40 transition-all duration-150 hover:scale-102 ease-in-out cursor-pointer items-center mt-3 text-white bg-black rounded-xl '>
-                  <div className='w-[50px] h-[50px] rounded-lg bg-white bg-cover bg-center overflow-hidden ' > <img className='w-full ' src={ele.image} alt="" /> </div>
+                  <div className='w-[50px] h-[50px] rounded-lg bg-black bg-cover bg-center overflow-hidden ' > <img className='w-full ' src={ele.image} alt="" /> </div>
                   <h1 className="outline-text text-sm tracking-[1px] flex gap-1 item-center ">{ele.name} <MdVerified className='text-blue-500 mt-1 ' /> </h1>
 
                 </div>
@@ -54,7 +53,10 @@ function Side_bar2() {
           }
         </div>
       </div>
-      {/* ////////// */}
+      {/* /////  2 bar ///// */}
+
+
+      
       <div className={`w-[230px] sm:w-[300px] lg:hidden transition-all duration-300 ease-in-out fixed top-0 right-0 z-8 block px-2 py-3 xl:w-[20%] min-h-screen bg-[#1a1a1a] ${side_bar2 ? "right-0" : "right-[-240px] sm:right-[-305px]"} `}  >
         <div className='py-4 relative px-3 rounded-2xl text-sm tw_sh text-white tw_sh mt-2 tracking-[1px]'>Welcome !  <span className='text-orange-400 to_sh text-md'>{crnt_user.name}</span>  <GiCaptainHatProfile className='text-white absolute top-0 left-1 -rotate-25 text-2xl' /></div>
         <p className='text-white/70 text-sm mt-5 tracking-[1.5px]'>New Release</p>

@@ -7,7 +7,7 @@ export const App_context = createContext();
 
 function AppProvider({ children }) {
 
-    let new_release = songs.slice(1)
+    let new_release = songs.slice(0)
     let allartist = artists
     let navigate = useNavigate()
     let [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -121,10 +121,14 @@ function AppProvider({ children }) {
     ///////////////////////////////////
     let [currentTrack, setCurrentTrack] = useState(null)
     let [isplaying, setisplaying] = useState(false)
-
+    
     let audio = useRef(new Audio())
 
+    console.log(audio.current.currentTime);
+    
+    
     useEffect(() => {
+        console.log(currentTrack);
         if (currentTrack) {
             audio.current.src = currentTrack.audio
             if (isplaying) {
@@ -145,7 +149,6 @@ function AppProvider({ children }) {
 
         if (!track) {
             setisplaying(false);
-            setCurrentTrack(null);
             return;
         }
 
@@ -158,9 +161,6 @@ function AppProvider({ children }) {
         }
 
     }
-
-
-
 
     return (
         <App_context.Provider value={{

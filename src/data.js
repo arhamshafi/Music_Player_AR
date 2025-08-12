@@ -36,6 +36,11 @@ export const artists = [
         name: "Samar Jafri",
         image: "/imges_folder/samar.jpeg"
     },
+    {
+        id: "artist8",
+        name: "Asim Azhar",
+        image: "/imges_folder/asimazhar.jpeg"
+    },
 
 
 ];
@@ -67,7 +72,108 @@ export const songs = [
         artistName: "Jubin Nautiyal",
         image: "/imges_folder/barbad.jpeg",
         audio: "/music_files/Barbaad Saiyaara 320 Kbps.mp3"
-    }
+    },
+    {
+        id: "song4",
+        title: "Peed",
+        artistId: "artist4",
+        category: "Sad",
+        artistName: "Diljit Dosanjh",
+        image: "/imges_folder/peed.jpeg",
+        audio: "/music_files/Peed - Diljit Dosanjh.mp3"
+    },
+    {
+        id: "song5",
+        title: "Saiyaara",
+        artistId: "artist6",
+        category: "Romantic",
+        artistName: "Faheem Abdullah",
+        image: "/imges_folder/saiyaara.jpeg",
+        audio: "/music_files/Title Track Saiyaara 320 Kbps.mp3"
+    },
+    {
+        id: "song6",
+        title: "Shayad",
+        artistId: "artist2",
+        category: "Romantic",
+        artistName: "Arijit Singh",
+        image: "/imges_folder/shayad.jpeg",
+        audio: "/music_files/Shayad Love Aaj Kal 320 Kbps.mp3"
+    },
+    {
+        id: "song7",
+        title: "Haseen",
+        artistId: "artist5",
+        category: "Romantic",
+        artistName: "Talwiinder",
+        image: "/imges_folder/hassen.jpeg",
+        audio: "/music_files/Haseen Talwiinder 320 Kbps.mp3"
+    },
+    {
+        id: "song8",
+        title: "Bahana",
+        artistId: "artist4",
+        category: "Chill Vibes",
+        artistName: "Diljit Dosanjh",
+        image: "/imges_folder/bhana.jpeg",
+        audio: "/music_files/Bahana - Diljit Dosanjh.mp3"
+    },
+    {
+        id: "song9",
+        title: "Sajnaa",
+        artistId: "artist8",
+        category: "Sad",
+        artistName: "Asim Azhar",
+        image: "/imges_folder/sajna.jpeg",
+        audio: "/music_files/Sajnaa - (Raag.Fm) (1).mp3"
+    },
+    {
+        id: "song10",
+        title: "Soni Lagdi",
+        artistId: "artist4",
+        category: "Romantic",
+        artistName: "Diljit Dosanjh",
+        image: "/imges_folder/sonilagdi.jpeg",
+        audio: "/music_files/Sohni Lagdi - Diljit Dosanjh.mp3"
+    },
+
+    {
+        id: "song11",
+        title: "Baat OST",
+        artistId: "artist8",
+        category: "Romantic",
+        artistName: "Asim Azhar",
+        image: "/imges_folder/bat.jpeg",
+        audio: "/music_files/Baat - (Raag.Fm).mp3"
+    },
+    {
+        id: "song12",
+        title: "Tu Har Lamha",
+        artistId: "artist2",
+        category: "Romantic",
+        artistName: "Arijit Singh",
+        image: "/imges_folder/tuharlamha.jpeg",
+        audio: "/music_files/Tu Har Lamha Khamoshiyan 320 Kbps.mp3"
+    },
+    {
+        id: "song13",
+        title: "Akhiyan",
+        artistId: "free",
+        category: "Chill Vibes",
+        artistName: "Harkirat Sangha",
+        image: "/imges_folder/harkirat.jpeg",
+        audio: "/music_files/Akhiyan - Harkirat Sangha.mp3"
+    },
+    {
+        id: "song14",
+        title: "Dhun",
+        artistId: "artist2",
+        category: "Romantic",
+        artistName: "Arijit Singh",
+        image: "/imges_folder/dhun.jpeg",
+        audio: "/music_files/Dhun Saiyaara 320 Kbps.mp3"
+    },
+
 ];
 
 export const categories = ["Romantic", "Sad", "Chill Vibes"];
