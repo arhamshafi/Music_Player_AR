@@ -173,6 +173,33 @@ export const songs = [
         image: "/imges_folder/dhun.jpeg",
         audio: "/music_files/Dhun Saiyaara 320 Kbps.mp3"
     },
+    {
+        id: "song15",
+        title: "Water DD.",
+        artistId: "artist4",
+        category: "Romantic",
+        artistName: "Diljit Dosanjh",
+        image: "/imges_folder/water2.jpeg",
+        audio: "/music_files/Water Diljit Dosanjh 320 Kbps.mp3"
+    },
+    {
+        id: "song16",
+        title: "Departure Lane",
+        artistId: "free",
+        category: "Chill Vibes",
+        artistName: "Talha Anjum",
+        image: "/imges_folder/departurelane.jpeg",
+        audio: "/music_files/Departure Lane - (Raag.Fm).mp3"
+    },
+    {
+        id: "song17",
+        title: "Behkana",
+        artistId: "free",
+        category: "Romantic",
+        artistName: "Ali Sethi",
+        image: "/imges_folder/behkana.jpeg",
+        audio: "/music_files/Behkana (PenduJatt.Com.Se).mp3"
+    },
 
 ];
 

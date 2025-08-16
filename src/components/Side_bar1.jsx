@@ -17,7 +17,7 @@ function Side_bar1() {
 
     return (
 
-        <div className={`w-[200px] lg:w-[15%] min-h-screen text-white transition-all ease-in-out duration-300 bg-[#1a1a1a] fixed top-0 ${side_bar1 ? "left-0" : "left-[-205px]"} z-10 lg:relative lg:left-0 `}>
+        <div className={`w-[200px] min-h-screen text-white transition-all ease-in-out duration-300 bg-[#1a1a1a] fixed top-0 ${side_bar1 ? "left-0" : "left-[-205px]"} z-10 lg:relative lg:left-0 `}>
             <p className='font-bold mt-5 ml-4 text-lg hidden items-center xl:flex gap-3'> <FaHeadphonesAlt className='text-orange-500 scale-115' /> MUSIC PLAYER</p>
             <p className='font-bold mt-5 ml-4 text-lg flex items-center xl:hidden gap-3'> <FaHeadphonesAlt className='text-orange-500 scale-115' /> PLAYER</p>
             <div className='mt-10'>

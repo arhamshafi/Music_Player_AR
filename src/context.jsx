@@ -7,7 +7,7 @@ export const App_context = createContext();
 
 function AppProvider({ children }) {
 
-    let new_release = songs.slice(0)
+    let new_release = [4, 9].map(i => songs[i])
     let allartist = artists
     let navigate = useNavigate()
     let [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -15,8 +15,6 @@ function AppProvider({ children }) {
     let [refresh, setrefresh] = useState(false)
     let [side_bar1, setside_bar_1] = useState(false)
     let [side_bar2, setside_bar_2] = useState(false)
-
-
 
     const [App_users, setAppUsers] = useState(() => {
         const stored = localStorage.getItem("new_user");
@@ -32,7 +30,6 @@ function AppProvider({ children }) {
             return {};
         }
     });
-
 
     useEffect(() => {
         const stored = localStorage.getItem("new_user");
@@ -66,7 +63,6 @@ function AppProvider({ children }) {
             return;
         }
         let matched_account = users.find((ele) => ele.email === loginData.email)
-        console.log(matched_account);
 
         if (matched_account) {
             if (matched_account.password === loginData.password) {
@@ -121,52 +117,91 @@ function AppProvider({ children }) {
     ///////////////////////////////////
     let [currentTrack, setCurrentTrack] = useState(null)
     let [isplaying, setisplaying] = useState(false)
-    
+    let [active_playlist, set_play_list] = useState([])
+    let [crnt_index, set_crnt_index] = useState(null)
+    let [crnt_time, setcrnt_time] = useState(0)
+    let [duration, setduration] = useState(0)
     let audio = useRef(new Audio())
 
-    console.log(audio.current.currentTime);
-    
-    
+    let handle_track = (track, index, play_List) => {
+        set_play_list(play_List)
+        set_crnt_index(index)
+        setCurrentTrack(track)
+        setisplaying(true)
+    }
+
     useEffect(() => {
-        console.log(currentTrack);
         if (currentTrack) {
             audio.current.src = currentTrack.audio
             if (isplaying) {
                 audio.current.play()
             }
-            else {
-                audio.current.pause()
-            }
-
         }
-        else {
-            audio.current.pause();
-            audio.current.src = "";
-        }
-    }, [currentTrack, isplaying])
+    }, [currentTrack])
 
-    let handle_track = (track) => {
+    let togglePlay = (ele) => {
+        if (!currentTrack) return
 
-        if (!track) {
-            setisplaying(false);
-            return;
+        // new song k liye
+        if (ele.id !== currentTrack.id) {
+            setisplaying(true)
+            return
         }
 
-        if (currentTrack?.id === track.id) {
-            setisplaying(!isplaying)
+        // same song ka toogle 
+        if (isplaying) {
+            audio.current.pause()
+            setisplaying(false)
+        } else {
+            audio.current.play()
+            setisplaying(true)
         }
-        else {
+    };
+    let play_next = () => {
+        let next = (crnt_index + 1) % active_playlist.length
+        set_crnt_index(next)
+        setCurrentTrack(active_playlist[next])
+        setisplaying(true)
+    }
+    let play_prev = () => {
+        let prev = (crnt_index - 1 + active_playlist.length) % active_playlist.length
+        set_crnt_index(prev)
+        setCurrentTrack(active_playlist[prev])
+        setisplaying(true)
+    }
+
+    useEffect(() => {
+
+        let music = audio.current
+
+        music.onloadeddata = () => {
+            setduration(music.duration)
+        }
+        music.ontimeupdate = () => {
+            setcrnt_time(music.currentTime)
+        }
+        audio.current.onended = () => {
+            if (active_playlist.length === 0) return;
+            let nextIndex = (crnt_index + 1) % active_playlist.length;
+            set_crnt_index(nextIndex);
+            setCurrentTrack(active_playlist[nextIndex]);
             setisplaying(true);
-            setCurrentTrack(track);
-        }
+        };
+    }, [crnt_index, active_playlist])
 
+    function formatTime(time) {
+        if (isNaN(time)) return "00:00";
+        let minutes = Math.floor(time / 60);
+        let seconds = Math.floor(time % 60);
+        if (seconds < 10) seconds = `0${seconds}`;
+        return `${minutes}:${seconds}`;
     }
 
     return (
         <App_context.Provider value={{
             loginData, setLoginData, onhandle, login, sing_handle, sign_up_data, Sign_up, App_users, crnt_user, setcrnt_user,
             side_bar1, setside_bar_1, side_bar2, setside_bar_2, new_release, isplaying, setisplaying, handle_track, currentTrack,
-            setCurrentTrack, allartist
+            setCurrentTrack, allartist, crnt_time, setcrnt_time, duration, audio, formatTime, togglePlay, play_next, play_prev
         }}>
             {children}
         </App_context.Provider>

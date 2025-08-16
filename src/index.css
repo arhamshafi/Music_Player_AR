@@ -5,30 +5,58 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
 .tw_sh {
   text-shadow: .1px .1px 3px white;
 }
+
 .to_sh {
   text-shadow: .1px .1px 3px orangered;
 }
+
 .bx_sh {
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.493);
 }
+
 .ox_sh {
   box-shadow: .5px .5px 5px 0px orangered;
 }
+
 .wx_sh {
   box-shadow: .5px .5px 5px 0px white;
 }
+
+.blck_div {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.8),
+      
+      rgba(0, 0, 0, 0.6),
+      
+      rgba(0, 0, 0, 0)
+          );
+}
+.blck_div2 {
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.8),
+      
+      rgba(0, 0, 0, 0.6),
+      
+      rgba(0, 0, 0, 0)
+          );
+}
+
+
 
 .custom-number-input::-webkit-outer-spin-button,
 .custom-number-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .anime_1 {
   animation: 1s anime_1 linear infinite alternate;
 }
+
 @keyframes anime_1 {
   from {
     opacity: 1;
@@ -41,31 +69,42 @@ body {
 
 .outline-text {
   font-weight: bold;
-  color: transparent; 
-  -webkit-text-stroke: 1px white; 
+  color: transparent;
+  -webkit-text-stroke: 1px white;
 }
 
 .only-y-scroll {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 .only-y-scroll::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
+
 .only-y-scroll {
   scrollbar-width: none;
 }
+
 .only-y-scroll::-webkit-scrollbar-thumb {
   background: transparent;
 }
+
 html {
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-html::-webkit-scrollbar { width: 0; background: transparent; }
-html::-webkit-scrollbar-thumb { background: transparent; }
+
+html::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+}
 
 
 
@@ -94,6 +133,22 @@ html::-webkit-scrollbar-thumb { background: transparent; }
     right: 0px;
     font-size: 15px;
     top: 10px;
+  }
+
+  .side_br2 {
+    width: 250px;
+  }
+
+  .wid {
+    width: 70%;
+  }
+
+  .ts {
+    font-size: 7px;
+  }
+
+  .ts_2 {
+    font-size: 12px;
   }
 }
 
